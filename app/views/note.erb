@@ -1,0 +1,21 @@
+<div class="container">
+<div class="note">
+  <h2><%= @note.title %></h2>
+    <div class="content">
+      <%= @note.content %>
+    </div>
+
+    <form class="delete_form" action="/notes/<%=@note.id%>" method="post">
+      <input class="btn btn-danger" type="submit" value="Delete">
+      <input name="_method" type="hidden" value="delete">
+      <input name="id" type="hidden" value="<%=@note.id%>">
+    </form>
+
+    <form class="edit_form" action="/notes/<%=@note.id%>/edit" method="get">
+      <!-- <input class="btn" type="submit" value="edit"> -->
+      <button type="submit" class=".edit btn">
+        <i class="icon-edit"></i> Edit
+      </button>
+    </form>
+  </div>
+</div>
