@@ -73,3 +73,15 @@ header a:hover{
   color: black;
   text-decoration: underline;
 }
+
+button {
+  margin-top: 10px;
+}
+
+input[value="Submit"] {
+  display: block;
+}
+
+input[value="Update"] {
+  display: block;
+}
