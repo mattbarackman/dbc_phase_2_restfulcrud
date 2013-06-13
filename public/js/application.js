@@ -11,7 +11,7 @@ $(document).ready(function() {
     });
 
     request.done(function(response){
-     note.fadeOut(500);
+     note.hide(500);
    });
   }
 

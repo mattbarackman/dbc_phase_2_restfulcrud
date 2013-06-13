@@ -57,6 +57,13 @@ header a:hover{
   width: auto;
 }
 
+
+.note {
+  border-bottom: 1px gray dashed;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
 .note a {
   color: black;
   text-decoration: none;
