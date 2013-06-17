@@ -9,6 +9,7 @@ $(document).ready(function() {
       method: "DELETE",
       data: $(this).serialize()
     });
+
     note.fadeOut(500);
   }
 

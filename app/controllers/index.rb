@@ -13,7 +13,7 @@ end
 #Read all notes
 
 get '/' do
-  @notes = Note.order("created_at ASC")
+  @notes = Note.order("created_at DESC")
   erb :index
 end
 
