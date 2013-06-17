@@ -9,10 +9,7 @@ $(document).ready(function() {
       method: "DELETE",
       data: $(this).serialize()
     });
-
-    request.done(function(response){
-     note.fadeOut(500);
-   });
+    note.fadeOut(500);
   }
 
   function requestConfirmation(e) {
