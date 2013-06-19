@@ -1,12 +1,21 @@
 #Create a new note
 
 get '/notes/new' do
+  @errors = errors
+  @form_data = session.delete(:form_data) if session[:form_data]
   erb :create
 end
 
 post '/notes/new' do 
-  post = Note.create(params[:form])
-  redirect "/"
+  note = Note.new(params[:form])
+  if note.valid?
+    note.save
+    redirect "/"
+  else
+    session[:errors] = note.errors
+    session[:form_data] = convert_for_session(params[:form])
+    redirect '/notes/new'
+  end
 end
 
 

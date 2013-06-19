@@ -1,8 +1,10 @@
 <div class="container">
   <h2>What do you want to remember?<h2>
+  <%= erb :errors %>
   <form action="/notes/new" method="post">
-    <input name="form[title]" type="text" placeholder="Title">
-    <textarea cols="40" rows="5" name="form[content]" placeholder="Write a description for your note here..."></textarea>
+    <input name="form[title]" type="text" placeholder="Title"
+    <%= "value=#{@form_data[:title]}" if @form_data %> >
+    <textarea cols="40" rows="5" name="form[content]" placeholder="Write a description for your note here..."><%= @form_data[:content] if @form_data %></textarea>
     <input class="btn" type="submit" value="Submit">
   </form>
 </div>

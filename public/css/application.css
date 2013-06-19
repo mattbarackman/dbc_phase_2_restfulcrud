@@ -85,3 +85,7 @@ input[value="Submit"] {
 input[value="Update"] {
   display: block;
 }
+
+.errors {
+  color: red;
+}
