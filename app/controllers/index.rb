@@ -14,7 +14,7 @@ post '/notes' do
   else
     session[:errors] = note.errors
     session[:form_data] = convert_for_session(params[:form])
-    redirect '/notes'
+    redirect '/notes/new'
   end
 end
 
