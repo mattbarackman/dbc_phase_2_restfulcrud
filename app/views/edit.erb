@@ -1,4 +1,6 @@
 <div class="container">
+  <h2>Edit<h2>
+  <%= erb :errors %>
   <h2>
   <form action="/notes/<%=@note.id%>/edit" method="post">
     <input name="form[title]" type="text" placeholder="Title" value="<%=@note.title%>">

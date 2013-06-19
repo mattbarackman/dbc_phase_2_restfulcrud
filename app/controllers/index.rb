@@ -34,12 +34,20 @@ end
 
 #Update a note
 get '/notes/:note_id/edit' do |note_id|
+  @errors = errors
   @note = Note.find(note_id)
   erb :edit
 end
 
 post '/notes/:note_id/edit' do |note_id|
-  Note.update(note_id,params[:form])
+  note = Note.update(note_id,params[:form])
+  if note.valid?
+    redirect "/"
+  else
+    session[:errors] = note.errors
+    session[:form_data] = convert_for_session(params[:form])
+    redirect "/notes/#{note_id}/edit"
+  end
   redirect "/"
 end
 
