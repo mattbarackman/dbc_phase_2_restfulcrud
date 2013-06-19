@@ -13,15 +13,6 @@ input {
   width: 536px;
 }
 
-.delete_form{
-  display:inline;
-}
-
-.edit_form{
-  display:inline;
-  height: auto;
-}
-
 .edit {
   margin-bottom: 0px;
 }

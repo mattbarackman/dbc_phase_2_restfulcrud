@@ -6,7 +6,7 @@ get '/notes/new' do
   erb :create
 end
 
-post '/notes/new' do 
+post '/notes' do 
   note = Note.new(params[:form])
   if note.valid?
     note.save
@@ -14,12 +14,12 @@ post '/notes/new' do
   else
     session[:errors] = note.errors
     session[:form_data] = convert_for_session(params[:form])
-    redirect '/notes/new'
+    redirect '/notes'
   end
 end
 
 
-#Read all notes
+#Read notes
 
 get '/' do
   @notes = Note.order("created_at DESC")

@@ -1,7 +1,9 @@
 <div class="container">
+  <h2>
   <form action="/notes/<%=@note.id%>/edit" method="post">
-    <input name="form[title]" type="text" value="<%=@note.title%>">
-    <textarea cols="40" rows="5" name="form[content]"><%=@note.content%></textarea>
+    <input name="form[title]" type="text" placeholder="Title" value="<%=@note.title%>">
+    <textarea cols="40" rows="5" name="form[content]" placeholder="Write a description for your note here..."><%=@note.content%></textarea>
     <input class="update btn" type="submit" value="Update">
   </form>
+  </h2>
 </div>
